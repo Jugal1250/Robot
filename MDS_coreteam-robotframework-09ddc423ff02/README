@@ -1,0 +1,122 @@
+This repository holds user / browser test definitions
+
+Installation instructions
+Lookup robotframework.org
+
+For Mac:
+pip3 install robotframework
+
+
+Built-in libraries (nothing to install just 'include' in settings)
+https://robotframework.org/robotframework/#standard-libraries
+BuiltIn
+OperatingSystem
+Dialogs
+String
+XML
+Process
+Collections
+DateTime
+Screenshot
+
+Extra libraries:
+Selenium2
+Appium
+FTP
+SSH
+Diff
+Swing
+Archive
+Database, depends on a few other libraries:
+    SQL Server:  pip3 install pymssql
+    MySQL = pip3 install pymysql
+API, depends on other libraries:
+    Requests = pip3 install requests
+                pip3 install robotframework-requests
+https://marketsquare.github.io/robotframework-requests/
+
+
+For extra libraries:
+pip3 install robotframework-angularjs
+
+Architectural vision:
+1. Script file (holds test cases)
+2. Script file talks to Common and App Keywords files
+3. Common.robot file holds test setup and teardown instructions
+4. App Keywords files hold keyword definitions and talk to Page Object files
+5. Page Object files are page components that talk to SeleniumLibrary
+6. SeleniumLibrary talks to Selenium Webdriver
+
+Principles
+- Result file should never be confusing
+- Refactor page object locators
+- Use quotes to identify UI Elements
+- App keywords should only call keywords from Page Object files
+
+How to run from command line:
+robot -d [results] [script.robot] -i [tag]
+
+How to run from batch file (Windows):
+- create a text file with .bat extension
+@echo off
+call robot -d results tests/my-script.robot
+call robot -d results tests/my-script2.robot
+- double click on .batpip file
+
+How to run a specific test case:
+robot -t "the test case"  tests/product1.robot
+
+How to supply variable input data at runtime:
+robot -v MY_VARIABLE:A new value
+
+____________________________________________________________________________________________________________________
+
+
+1. Install Python version = 3.10.5
+
+https://www.python.org/downloads/
+
+2. Download Pycharm Community edition from the below URL:
+
+https://www.jetbrains.com/pycharm/download
+
+3. Run the below commands in CMD to install robotframework and other libraries:
+ 
+pip install robotframework==4.0b1
+
+pip install robotframework-seleniumtestability==2.0.0
+
+pip install robotframework-seleniumlibrary==5.1.3
+
+pip install selenium==2.0.0
+
+4. Once installed, Launch Pycharm and go to file->Settings->Plugin
+
+Type Intellibot#patched and install it
+
+5. Go to settings->Python Interpreter->Click on gear icon(Settings)->Add
+
+Click System interpreter and select Ok
+
+6. Download or clone the repository MyDocSafe_Automation folder and import it in pycharm
+
+7. In the Terminal window, navigate inside the Test_Suite folder and Run the below command:
+
+robot --outputdir <Result_directory> <Filename>.robot
+
+i.e robot --outputdir ../Reports Testcases.robot
+
+To run in different browser
+
+i.e robot --outputdir ../Reports  --variable Browser:chrome Testcases.robot
+
+To run the test in different environment, different credentials and passing tags in the command line:
+
+robot --outputdir ../Reports  -v Browser:<BrowserName> -v Environment:<URL> -v UserRegistrationLink:<URL> -v Email_address:<Username> -v Password:<Password> -v TagName:<Tagname> Testcases.robot
+
+i.e robot --outputdir ../Reports  -v Browser:chrome -v Environment:https://app.mydocsafe.com -v UserRegistrationLink:https://app-staging.mydocsafe.com/signup-free-trial/professional -v Email_address:mydocsafetest50+QA_prod@gmail.com -v Password:RobotFramework2! -v TagName:Production Testcases.robot
+
+
+
+
+

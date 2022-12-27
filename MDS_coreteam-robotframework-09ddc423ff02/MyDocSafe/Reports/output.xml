@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0b1 (Python 3.10.7 on win32)" generated="20221227 09:46:58.043" rpa="false">
+<suite id="s1" name="Testcases" source="C:\Users\Zbook\Desktop\Master_30\MDS_coreteam-robotframework-09ddc423ff02\MyDocSafe\Test_Suite\Testcases.robot">
+<test id="s1-t1" name="TC_35_Send doc for signing to a contacts group">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Browser=='chrome'}</arg>
+<arg>Launch browser</arg>
+<arg>${Environment}</arg>
+<arg>${Browser}</arg>
+<arg>ELSE IF</arg>
+<arg>${Browser=='headlesschrome'}</arg>
+<arg>Launch browser Headless</arg>
+<arg>${Environment}</arg>
+</arguments>
+<kw name="Launch browser" library="Common">
+<arguments>
+<arg>${Environment}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${Environment}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20221227 09:46:59.155" level="INFO">Opening browser 'chrome' to base url 'https://app-staging.mydocsafe.com/signin'.</msg>
+<status status="PASS" starttime="20221227 09:46:59.154" endtime="20221227 09:47:05.077"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>${1400}</arg>
+<arg>${600}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:05.078" endtime="20221227 09:47:05.201"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221227 09:47:05.202" endtime="20221227 09:47:05.326"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:46:59.153" endtime="20221227 09:47:05.326"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:46:59.152" endtime="20221227 09:47:05.326"></status>
+</kw>
+<kw name="Get Email" library="AddNewContact">
+<assign>
+<var>${ContactEmail}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@mailinator.com</arg>
+</arguments>
+<assign>
+<var>${domain}</var>
+</assign>
+<msg timestamp="20221227 09:47:05.328" level="INFO">${domain} = @mailinator.com</msg>
+<status status="PASS" starttime="20221227 09:47:05.328" endtime="20221227 09:47:05.328"></status>
+</kw>
+<kw name="Randomword" library="CustomKeywords">
+<assign>
+<var>${Email}</var>
+</assign>
+<msg timestamp="20221227 09:47:05.329" level="INFO">${Email} = Testwjzhpk</msg>
+<status status="PASS" starttime="20221227 09:47:05.329" endtime="20221227 09:47:05.329"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Email}${domain}</arg>
+</arguments>
+<assign>
+<var>${Value}</var>
+</assign>
+<msg timestamp="20221227 09:47:05.330" level="INFO">${Value} = Testwjzhpk@mailinator.com</msg>
+<status status="PASS" starttime="20221227 09:47:05.329" endtime="20221227 09:47:05.330"></status>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<doc>Converts string to lower case.</doc>
+<arguments>
+<arg>${Value}</arg>
+</arguments>
+<assign>
+<var>${Value}</var>
+</assign>
+<msg timestamp="20221227 09:47:05.331" level="INFO">${Value} = testwjzhpk@mailinator.com</msg>
+<status status="PASS" starttime="20221227 09:47:05.330" endtime="20221227 09:47:05.331"></status>
+</kw>
+<msg timestamp="20221227 09:47:05.331" level="INFO">${ContactEmail} = testwjzhpk@mailinator.com</msg>
+<status status="PASS" starttime="20221227 09:47:05.327" endtime="20221227 09:47:05.331"></status>
+</kw>
+<kw name="Login with valid credentials" library="LoginPage">
+<arguments>
+<arg>${Email_address}</arg>
+<arg>${Password}</arg>
+</arguments>
+<kw name="Enter Email" library="LoginPage">
+<arguments>
+<arg>${EMAIL_ADDRESS_Prod}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${EmailTextBox}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:05.334" endtime="20221227 09:47:05.393"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@name = 'email']</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:05.394" level="INFO">Typing text 'mydocsafetest50+QA_staging@gmail.com' into text field '//input[@name = 'email']'.</msg>
+<status status="PASS" starttime="20221227 09:47:05.394" endtime="20221227 09:47:05.713"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:05.333" endtime="20221227 09:47:05.713"></status>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<arguments>
+<arg>${PASSWORD_Prod}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${PasswordTextBox}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:05.715" endtime="20221227 09:47:05.774"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PasswordTextBox}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:05.775" level="INFO">Typing text 'RobotFramework2!' into text field '//input[@name = 'password']'.</msg>
+<status status="PASS" starttime="20221227 09:47:05.774" endtime="20221227 09:47:05.998"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:05.714" endtime="20221227 09:47:05.999"></status>
+</kw>
+<kw name="Click Signin Button" library="LoginPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${SigninButton}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:06.000" endtime="20221227 09:47:06.049"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:07.057" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221227 09:47:06.049" endtime="20221227 09:47:07.057"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SigninButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:07.058" level="INFO">Clicking element '//span[text() = 'Sign in']'.</msg>
+<status status="PASS" starttime="20221227 09:47:07.057" endtime="20221227 09:47:07.159"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:05.999" endtime="20221227 09:47:07.159"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:17.162" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:07.160" endtime="20221227 09:47:17.162"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:05.332" endtime="20221227 09:47:17.162"></status>
+</kw>
+<kw name="Upload Single Document" library="SendDocForQuickApproval">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${AddNew}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:17.166" level="INFO">Clicking element '//div[@class="layout-align-start-center layout-row"]//md-menu'.</msg>
+<status status="PASS" starttime="20221227 09:47:17.165" endtime="20221227 09:47:17.289"></status>
+</kw>
+<kw name="Run Keyword Until Success" library="SendDocForQuickApproval">
+<arguments>
+<arg>Click Element</arg>
+<arg>${Document_Upload}</arg>
+</arguments>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${Action}</arg>
+<arg>${Element}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Element}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:17.294" level="INFO">Clicking element '//span[@class="mds__document__itemName"]//span[text()="Document upload"]'.</msg>
+<msg timestamp="20221227 09:47:18.438" level="WARN">Message: element click intercepted: Element &lt;span&gt;...&lt;/span&gt; is not clickable at point (342, 196). Other element would receive the click: &lt;button class="md-button md-default-theme md-ink-ripple md-focused" type="button" ng-transclude="" ng-click="openAddFolder(parent)" role="menuitem"&gt;...&lt;/button&gt;
+  (Session info: chrome=108.0.5359.125)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0119ACD3+2075859]
+	Ordinal0 [0x0112EE61+1633889]
+	Ordinal0 [0x0102B7BD+571325]
+	Ordinal0 [0x01061499+791705]
+	Ordinal0 [0x0105F4AC+783532]
+	Ordinal0 [0x0105D0AB+774315]
+	Ordinal0 [0x0105BD37+769335]
+	Ordinal0 [0x01051C76+728182]
+	Ordinal0 [0x0107731C+881436]
+	Ordinal0 [0x010515BF+726463]
+	Ordinal0 [0x01077534+881972]
+	Ordinal0 [0x0108B56A+963946]
+	Ordinal0 [0x01077136+880950]
+	Ordinal0 [0x0104FEFD+720637]
+	Ordinal0 [0x01050F3F+724799]
+	GetHandleVerifier [0x0144EED2+2769538]
+	GetHandleVerifier [0x01440D95+2711877]
+	GetHandleVerifier [0x0122A03A+521194]
+	GetHandleVerifier [0x01228DA0+516432]
+	Ordinal0 [0x0113682C+1665068]
+	Ordinal0 [0x0113B128+1683752]
+	Ordinal0 [0x0113B215+1683989]
+	Ordinal0 [0x01146484+1729668]
+	BaseThreadInitThunk [0x75BA00F9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FC7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FC7B8E+238]
+</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20221227 09:47:18.721" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-663.png"&gt;&lt;img src="selenium-screenshot-663.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221227 09:47:18.443" endtime="20221227 09:47:18.721"></status>
+</kw>
+<msg timestamp="20221227 09:47:18.730" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span&gt;...&lt;/span&gt; is not clickable at point (342, 196). Other element would receive the click: &lt;button class="md-button md-default-theme md-ink-ripple md-focused" type="button" ng-transclude="" ng-click="openAddFolder(parent)" role="menuitem"&gt;...&lt;/button&gt;
+  (Session info: chrome=108.0.5359.125)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0119ACD3+2075859]
+	Ordinal0 [0x0112EE61+1633889]
+	Ordinal0 [0x0102B7BD+571325]
+	Ordinal0 [0x01061499+791705]
+	Ordinal0 [0x0105F4AC+783532]
+	Ordinal0 [0x0105D0AB+774315]
+	Ordinal0 [0x0105BD37+769335]
+	Ordinal0 [0x01051C76+728182]
+	Ordinal0 [0x0107731C+881436]
+	Ordinal0 [0x010515BF+726463]
+	Ordinal0 [0x01077534+881972]
+	Ordinal0 [0x0108B56A+963946]
+	Ordinal0 [0x01077136+880950]
+	Ordinal0 [0x0104FEFD+720637]
+	Ordinal0 [0x01050F3F+724799]
+	GetHandleVerifier [0x0144EED2+2769538]
+	GetHandleVerifier [0x01440D95+2711877]
+	GetHandleVerifier [0x0122A03A+521194]
+	GetHandleVerifier [0x01228DA0+516432]
+	Ordinal0 [0x0113682C+1665068]
+	Ordinal0 [0x0113B128+1683752]
+	Ordinal0 [0x0113B215+1683989]
+	Ordinal0 [0x01146484+1729668]
+	BaseThreadInitThunk [0x75BA00F9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FC7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FC7B8E+238]
+</msg>
+<status status="FAIL" starttime="20221227 09:47:17.293" endtime="20221227 09:47:18.731"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Element}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:19.738" level="INFO">Clicking element '//span[@class="mds__document__itemName"]//span[text()="Document upload"]'.</msg>
+<status status="PASS" starttime="20221227 09:47:19.737" endtime="20221227 09:47:19.840"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:17.291" endtime="20221227 09:47:19.841"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:17.290" endtime="20221227 09:47:19.841"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Upload_From_Computer}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:19.841" endtime="20221227 09:47:20.663"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<arguments>
+<arg>${Input_Document}</arg>
+<arg>C:\\Users\\Zbook\\Desktop\\Master_30\\MDS_coreteam-robotframework-09ddc423ff02\\MyDocSafe\\Resources\\PO/01_DOC.doc</arg>
+</arguments>
+<msg timestamp="20221227 09:47:20.665" level="INFO">Sending C:\Users\Zbook\Desktop\Master_30\MDS_coreteam-robotframework-09ddc423ff02\MyDocSafe\Resources\PO\01_DOC.doc to browser.</msg>
+<status status="PASS" starttime="20221227 09:47:20.664" endtime="20221227 09:47:20.756"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:25.772" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:20.757" endtime="20221227 09:47:25.772"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Close_Button}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:25.773" level="INFO">Clicking element '//button[@aria-label = 'Close dialog']'.</msg>
+<status status="PASS" starttime="20221227 09:47:25.773" endtime="20221227 09:47:25.896"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:17.164" endtime="20221227 09:47:25.897"></status>
+</kw>
+<kw name="Click Three Dot Button" library="CreateStaticTemplate">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${ThreeDotOptionsButton}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:25.898" endtime="20221227 09:47:25.947"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:26.959" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221227 09:47:25.948" endtime="20221227 09:47:26.959"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ThreeDotOptionsButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:26.960" level="INFO">Clicking element '//button[@custom-popover-text = 'Options']'.</msg>
+<status status="PASS" starttime="20221227 09:47:26.959" endtime="20221227 09:47:27.162"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:29.176" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:27.162" endtime="20221227 09:47:29.176"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:25.897" endtime="20221227 09:47:29.176"></status>
+</kw>
+<kw name="Click Send For Signing button" library="SendForSigning">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${SendForSigningButton}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:29.178" endtime="20221227 09:47:29.224"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SendForSigningButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:29.226" level="INFO">Clicking element '//span[text() = 'Send for signing']//parent::span/parent::button'.</msg>
+<status status="PASS" starttime="20221227 09:47:29.225" endtime="20221227 09:47:29.370"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:29.177" endtime="20221227 09:47:29.371"></status>
+</kw>
+<kw name="Add Contact Group As Signee" library="SigningDocuments">
+<assign>
+<var>${ContactMail1}</var>
+<var>${ContactMail2}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Email_Field}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:29.373" endtime="20221227 09:47:30.139"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Email_Field}</arg>
+<arg>TestBlaContactGroup</arg>
+</arguments>
+<msg timestamp="20221227 09:47:30.140" level="INFO">Typing text 'TestBlaContactGroup' into text field '//input[@name='email']'.</msg>
+<status status="PASS" starttime="20221227 09:47:30.139" endtime="20221227 09:47:30.537"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:35.554" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:30.538" endtime="20221227 09:47:35.554"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>none</arg>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20221227 09:47:35.555" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20221227 09:47:35.556" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20221227 09:47:35.556" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20221227 09:47:35.555" endtime="20221227 09:47:35.613"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:37.628" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:35.614" endtime="20221227 09:47:37.628"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Next1}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:37.629" level="INFO">Clicking element '//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/div[6]/button[2]'.</msg>
+<status status="PASS" starttime="20221227 09:47:37.628" endtime="20221227 09:47:37.782"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ContactMail1}</arg>
+</arguments>
+<assign>
+<var>${ContactGroupMail1}</var>
+</assign>
+<msg timestamp="20221227 09:47:37.820" level="INFO">${ContactGroupMail1} = rahul.sharma_05@mailinator.com</msg>
+<status status="PASS" starttime="20221227 09:47:37.782" endtime="20221227 09:47:37.820"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ContactMail2}</arg>
+</arguments>
+<assign>
+<var>${ContactGroupMail2}</var>
+</assign>
+<msg timestamp="20221227 09:47:37.860" level="INFO">${ContactGroupMail2} = rahul.sharma_06@mailinator.com</msg>
+<status status="PASS" starttime="20221227 09:47:37.821" endtime="20221227 09:47:37.860"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SigneePageNextbutton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:37.862" level="INFO">Clicking element '//button[@ng-click="nextState()"]'.</msg>
+<status status="PASS" starttime="20221227 09:47:37.861" endtime="20221227 09:47:37.947"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${NextButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:37.948" level="INFO">Clicking element '//span[text() = 'Next']//parent::translate//parent::span//parent::button'.</msg>
+<status status="PASS" starttime="20221227 09:47:37.948" endtime="20221227 09:47:38.019"></status>
+</kw>
+<msg timestamp="20221227 09:47:38.020" level="INFO">${ContactMail1} = rahul.sharma_05@mailinator.com</msg>
+<msg timestamp="20221227 09:47:38.020" level="INFO">${ContactMail2} = rahul.sharma_06@mailinator.com</msg>
+<status status="PASS" starttime="20221227 09:47:29.372" endtime="20221227 09:47:38.020"></status>
+</kw>
+<kw name="Add Signature Filed In Contacts Signee" library="SigningDocuments">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:42.033" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:38.022" endtime="20221227 09:47:42.033"></status>
+</kw>
+<kw name="Add Signature on doc" library="SigningDocuments">
+<kw name="Drag And Drop" library="SeleniumLibrary">
+<tags>
+<tag>plugin</tag>
+</tags>
+<doc>Drags element identified by ``locator`` into ``target`` element.</doc>
+<arguments>
+<arg>${FirstSigneeSignatureButton}</arg>
+<arg>${Document}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:42.034" endtime="20221227 09:47:42.707"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SecondSigneeTabButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:42.708" level="INFO">Clicking element '//div[@class='member-wrapper-name']//span[text()='2']'.</msg>
+<status status="PASS" starttime="20221227 09:47:42.708" endtime="20221227 09:47:42.805"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:46.820" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:42.805" endtime="20221227 09:47:46.820"></status>
+</kw>
+<kw name="Drag And Drop" library="SeleniumLibrary">
+<tags>
+<tag>plugin</tag>
+</tags>
+<doc>Drags element identified by ``locator`` into ``target`` element.</doc>
+<arguments>
+<arg>${SecondSigneeSignatureButton}</arg>
+<arg>${Document}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:46.820" endtime="20221227 09:47:47.428"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SendDocumentButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:47.429" level="INFO">Clicking element '//span[text() = 'Send document']//parent::span//parent::button'.</msg>
+<status status="PASS" starttime="20221227 09:47:47.428" endtime="20221227 09:47:47.546"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:49.562" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:47.547" endtime="20221227 09:47:49.562"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${DocumentSent}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:49.601" level="INFO">Element '//span[text()="Document has been sent."]' is displayed.</msg>
+<status status="PASS" starttime="20221227 09:47:49.562" endtime="20221227 09:47:49.601"></status>
+</kw>
+<kw name="Click Return to your documents button" library="SendForSigning">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${ReturnToYourDocumentsButton}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:49.602" endtime="20221227 09:47:49.644"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ReturnToYourDocumentsButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:49.645" level="INFO">Clicking element '//span[text() = 'Return to your documents']//parent::translate//parent::a'.</msg>
+<status status="PASS" starttime="20221227 09:47:49.644" endtime="20221227 09:47:52.026"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:49.601" endtime="20221227 09:47:52.027"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:42.033" endtime="20221227 09:47:52.027"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:38.021" endtime="20221227 09:47:52.027"></status>
+</kw>
+<kw name="Delete the File" library="Deletion">
+<kw name="Click Options button" library="Deletion">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${OptionsButton}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:52.030" endtime="20221227 09:47:54.485"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:56.501" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221227 09:47:54.485" endtime="20221227 09:47:56.501"></status>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<doc>Double clicks the element identified by ``locator``.</doc>
+<arguments>
+<arg>${OptionsButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:56.502" level="INFO">Double clicking element '//button[@custom-popover-text = 'Options']'.</msg>
+<status status="PASS" starttime="20221227 09:47:56.501" endtime="20221227 09:47:56.897"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:52.029" endtime="20221227 09:47:56.897"></status>
+</kw>
+<kw name="Click Delete Button" library="Deletion">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${DeleteButton}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:56.899" endtime="20221227 09:47:56.947"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20221227 09:47:57.960" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221227 09:47:56.948" endtime="20221227 09:47:57.960"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${DeleteButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:57.961" level="INFO">Clicking element '//span[text() ='Delete']//parent::span//parent::button'.</msg>
+<status status="PASS" starttime="20221227 09:47:57.960" endtime="20221227 09:47:58.054"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:56.898" endtime="20221227 09:47:58.054"></status>
+</kw>
+<kw name="Select 'Delete This File' in the popup" library="Deletion">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${DeleteThisFileButton}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:47:58.055" endtime="20221227 09:47:58.345"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${DeleteThisFileButton}</arg>
+</arguments>
+<msg timestamp="20221227 09:47:58.346" level="INFO">Clicking element '//span[text() ='Yes, delete this file']//parent::translate//parent::span'.</msg>
+<status status="PASS" starttime="20221227 09:47:58.345" endtime="20221227 09:47:58.426"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:58.054" endtime="20221227 09:47:58.427"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:47:52.028" endtime="20221227 09:47:58.427"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221227 09:47:58.428" endtime="20221227 09:48:00.627"></status>
+</kw>
+<kw name="Sign The Document with Both Contacts" library="SigningDocuments">
+<arguments>
+<arg>${Browser}</arg>
+<arg>${ContactMail1}</arg>
+<arg>${ContactMail2}</arg>
+</arguments>
+<assign>
+<var>${CPassword}</var>
+</assign>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:05.639" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:00.630" endtime="20221227 09:48:05.639"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Browser=='chrome'}</arg>
+<arg>Launch browser</arg>
+<arg>https://www.mailinator.com/v4/public/inboxes.jsp?to=rahul.sharma_05</arg>
+<arg>${Browser}</arg>
+<arg>ELSE IF</arg>
+<arg>${Browser=='headlesschrome'}</arg>
+<arg>Launch browser Headless</arg>
+<arg>https://www.mailinator.com/v4/public/inboxes.jsp?to=rahul.sharma_05</arg>
+</arguments>
+<kw name="Launch browser" library="Common">
+<arguments>
+<arg>https://www.mailinator.com/v4/public/inboxes.jsp?to=rahul.sharma_05</arg>
+<arg>${Browser}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${Environment}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20221227 09:48:05.641" level="INFO">Opening browser 'chrome' to base url 'https://www.mailinator.com/v4/public/inboxes.jsp?to=rahul.sharma_05'.</msg>
+<status status="PASS" starttime="20221227 09:48:05.641" endtime="20221227 09:48:08.775"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>${1400}</arg>
+<arg>${600}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:08.776" endtime="20221227 09:48:08.896"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221227 09:48:08.897" endtime="20221227 09:48:09.025"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:48:05.640" endtime="20221227 09:48:09.025"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:48:05.639" endtime="20221227 09:48:09.025"></status>
+</kw>
+<kw name="Open Mail" library="ChangeSigneeMail">
+<arguments>
+<arg>1</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:11.028" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:09.027" endtime="20221227 09:48:11.028"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221227 09:48:11.029" endtime="20221227 09:48:11.033"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:21.043" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:11.034" endtime="20221227 09:48:21.043"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>(//td[contains(@onclick,'showTheMessage')][1])[${mail_number}]</arg>
+</arguments>
+<msg timestamp="20221227 09:48:21.044" level="INFO">Clicking element '(//td[contains(@onclick,'showTheMessage')][1])[1]'.</msg>
+<status status="PASS" starttime="20221227 09:48:21.044" endtime="20221227 09:48:21.144"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:31.161" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:21.145" endtime="20221227 09:48:31.161"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${Select_irame}</arg>
+</arguments>
+<msg timestamp="20221227 09:48:31.162" level="INFO">Selecting frame '//iframe[@id='html_msg_body']'.</msg>
+<status status="PASS" starttime="20221227 09:48:31.161" endtime="20221227 09:48:31.203"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>changing frame</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:31.204" endtime="20221227 09:48:31.205"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:36.210" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:31.205" endtime="20221227 09:48:36.210"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:48:09.026" endtime="20221227 09:48:36.210"></status>
+</kw>
+<kw name="Open Document to Sign" library="ChangeSigneeMail">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Review_button}|${Access_Doc}|${Accept_invi}</arg>
+</arguments>
+<msg timestamp="20221227 09:48:36.212" level="INFO">Clicking element '//td//a[starts-with(text(),'Proceed to review')]|//a[normalize-space()='Access your document']|//a[normalize-space()='Accept invitation']'.</msg>
+<status status="PASS" starttime="20221227 09:48:36.212" endtime="20221227 09:48:36.374"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>click on button which is having document need to sign</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:36.374" endtime="20221227 09:48:36.375"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:41.384" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:36.375" endtime="20221227 09:48:41.384"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20221227 09:48:41.384" endtime="20221227 09:48:41.389"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:46.401" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:41.389" endtime="20221227 09:48:46.401"></status>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<doc>Switches to browser window matching ``locator``.</doc>
+<arguments>
+<arg>title:MyDocSafe</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:46.401" endtime="20221227 09:48:46.503"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Switching tab</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:46.503" endtime="20221227 09:48:46.504"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:48:36.211" endtime="20221227 09:48:46.504"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${Sign_In_for_Signee}</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20221227 09:48:46.540" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20221227 09:48:46.504" endtime="20221227 09:48:46.540"></status>
+</kw>
+<kw name="${count}==1" type="if">
+<status status="NOT_RUN" starttime="20221227 09:48:46.540" endtime="20221227 09:48:46.541"></status>
+</kw>
+<kw type="else">
+<kw name="Sign first document" library="SendDocForQuickApproval">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Approve_Document}|${Signee_Signature_Field}</arg>
+</arguments>
+<msg timestamp="20221227 09:48:46.543" level="INFO">Clicking element '//span[contains(text(),'Approve the document')]|//div[@class="page__field"]'.</msg>
+<status status="PASS" starttime="20221227 09:48:46.542" endtime="20221227 09:48:46.645"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>click on approve button</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:46.645" endtime="20221227 09:48:46.646"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:49.663" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:46.647" endtime="20221227 09:48:49.663"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>//li[@ng-click="vm.selectType('upload')"]</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:49.663" endtime="20221227 09:48:49.708"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//li[@ng-click="vm.selectType('upload')"]</arg>
+</arguments>
+<msg timestamp="20221227 09:48:49.709" level="INFO">Clicking element '//li[@ng-click="vm.selectType('upload')"]'.</msg>
+<status status="PASS" starttime="20221227 09:48:49.708" endtime="20221227 09:48:49.785"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:51.788" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:49.785" endtime="20221227 09:48:51.788"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Browse_Button}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:51.788" endtime="20221227 09:48:51.836"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>C:\\Users\\Zbook\\Desktop\\Master_30\\MDS_coreteam-robotframework-09ddc423ff02\\MyDocSafe\\Resources\\PO</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:51.836" endtime="20221227 09:48:51.837"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<arguments>
+<arg>${Browse_Button}</arg>
+<arg>C:\\Users\\Zbook\\Desktop\\Master_30\\MDS_coreteam-robotframework-09ddc423ff02\\MyDocSafe\\Resources\\PO/sign.png</arg>
+</arguments>
+<msg timestamp="20221227 09:48:51.837" level="INFO">Sending C:\Users\Zbook\Desktop\Master_30\MDS_coreteam-robotframework-09ddc423ff02\MyDocSafe\Resources\PO\sign.png to browser.</msg>
+<status status="PASS" starttime="20221227 09:48:51.837" endtime="20221227 09:48:51.918"></status>
+</kw>
+<kw name="Submit the signature" library="SendDocForQuickApproval">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20221227 09:48:53.923" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:51.919" endtime="20221227 09:48:53.923"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Add_Signature_03}</arg>
+</arguments>
+<msg timestamp="20221227 09:48:53.924" level="INFO">Clicking element '//span[contains(text(),'Add signature')]'.</msg>
+<status status="PASS" starttime="20221227 09:48:53.924" endtime="20221227 09:48:54.065"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>submitting the signature</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:54.066" endtime="20221227 09:48:54.067"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:48:51.919" endtime="20221227 09:48:54.068"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:48:46.541" endtime="20221227 09:48:54.068"></status>
+</kw>
+<kw name="Submit Document" library="ChangeSigneeMail">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Submit_Document}</arg>
+</arguments>
+<msg timestamp="20221227 09:48:54.069" level="INFO">Clicking element '//button[@ng-click="sendSignedDocument()"]'.</msg>
+<status status="PASS" starttime="20221227 09:48:54.069" endtime="20221227 09:48:54.687"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>CLicked ON Submit Document</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:48:54.688" endtime="20221227 09:48:54.689"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:48:54.068" endtime="20221227 09:48:54.689"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221227 09:48:54.689" endtime="20221227 09:48:56.874"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:48:46.541" endtime="20221227 09:48:56.874"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20221227 09:49:01.889" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221227 09:48:56.875" endtime="20221227 09:49:01.889"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Browser=='chrome'}</arg>
+<arg>Launch browser</arg>
+<arg>https://www.mailinator.com/v4/public/inboxes.jsp?to=rahul.sharma_06</arg>
+<arg>${Browser}</arg>
+<arg>ELSE IF</arg>
+<arg>${Browser=='headlesschrome'}</arg>
+<arg>Launch browser Headless</arg>
+<arg>https://www.mailinator.com/v4/public/inboxes.jsp?to=rahul.sharma_06</arg>
+</arguments>
+<kw name="Launch browser" library="Common">
+<arguments>
+<arg>https://www.mailinator.com/v4/public/inboxes.jsp?to=rahul.sharma_06</arg>
+<arg>${Browser}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${Environment}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20221227 09:49:01.893" level="INFO">Opening browser 'chrome' to base url 'https://www.mailinator.com/v4/public/inboxes.jsp?to=rahul.sharma_06'.</msg>
+<status status="PASS" starttime="20221227 09:49:01.892" endtime="20221227 09:49:04.534"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>${1400}</arg>
+<arg>${600}</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:49:04.534" endtime="20221227 09:49:04.657"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221227 09:49:04.657" endtime="20221227 09:49:04.784"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:49:01.891" endtime="20221227 09:49:04.785"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:49:01.890" endtime="20221227 09:49:04.785"></status>
+</kw>
+<kw name="Open Mail" library="ChangeSigneeMail">
+<arguments>
+<arg>1</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20221227 09:49:06.796" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221227 09:49:04.786" endtime="20221227 09:49:06.796"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221227 09:49:06.797" endtime="20221227 09:49:06.800"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20221227 09:49:16.802" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221227 09:49:06.801" endtime="20221227 09:49:16.802"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>(//td[contains(@onclick,'showTheMessage')][1])[${mail_number}]</arg>
+</arguments>
+<msg timestamp="20221227 09:49:16.803" level="INFO">Clicking element '(//td[contains(@onclick,'showTheMessage')][1])[1]'.</msg>
+<status status="PASS" starttime="20221227 09:49:16.802" endtime="20221227 09:49:16.895"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20221227 09:49:26.901" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221227 09:49:16.896" endtime="20221227 09:49:26.901"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${Select_irame}</arg>
+</arguments>
+<msg timestamp="20221227 09:49:26.902" level="INFO">Selecting frame '//iframe[@id='html_msg_body']'.</msg>
+<status status="PASS" starttime="20221227 09:49:26.902" endtime="20221227 09:49:26.944"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>changing frame</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:49:26.945" endtime="20221227 09:49:26.945"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20221227 09:49:31.952" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221227 09:49:26.945" endtime="20221227 09:49:31.952"></status>
+</kw>
+<status status="PASS" starttime="20221227 09:49:04.785" endtime="20221227 09:49:31.952"></status>
+</kw>
+<kw name="Open Document to Sign" library="ChangeSigneeMail">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Review_button}|${Access_Doc}|${Accept_invi}</arg>
+</arguments>
+<msg timestamp="20221227 09:49:31.953" level="INFO">Clicking element '//td//a[starts-with(text(),'Proceed to review')]|//a[normalize-space()='Access your document']|//a[normalize-space()='Accept invitation']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20221227 09:49:32.286" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-664.png"&gt;&lt;img src="selenium-screenshot-664.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221227 09:49:31.986" endtime="20221227 09:49:32.286"></status>
+</kw>
+<msg timestamp="20221227 09:49:32.289" level="FAIL">Element with locator '//td//a[starts-with(text(),'Proceed to review')]|//a[normalize-space()='Access your document']|//a[normalize-space()='Accept invitation']' not found.</msg>
+<status status="FAIL" starttime="20221227 09:49:31.952" endtime="20221227 09:49:32.289"></status>
+</kw>
+<status status="FAIL" starttime="20221227 09:49:31.952" endtime="20221227 09:49:32.290"></status>
+</kw>
+<status status="FAIL" starttime="20221227 09:48:00.628" endtime="20221227 09:49:32.290"></status>
+</kw>
+<kw name="Run Keyword If Test Passed" library="BuiltIn" type="teardown">
+<doc>Runs the given keyword with the given arguments, if the test passed.</doc>
+<arguments>
+<arg>close browser</arg>
+</arguments>
+<status status="PASS" starttime="20221227 09:49:32.291" endtime="20221227 09:49:32.291"></status>
+</kw>
+<status status="FAIL" starttime="20221227 09:46:59.150" endtime="20221227 09:49:32.292">Element with locator '//td//a[starts-with(text(),'Proceed to review')]|//a[normalize-space()='Access your document']|//a[normalize-space()='Accept invitation']' not found.</status>
+</test>
+<status status="FAIL" starttime="20221227 09:46:58.046" endtime="20221227 09:49:32.295"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Testcases">Testcases</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221227 09:46:59.019" level="ERROR">Error in file 'C:\Users\Zbook\Desktop\Master_30\MDS_coreteam-robotframework-09ddc423ff02\MyDocSafe\Resources\PO\SendDocForQuickApproval.robot' on line 6: Importing test library 'ImapLibrary' failed: ModuleNotFoundError: No module named 'ImapLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Zbook\Desktop\Master_30\MDS_coreteam-robotframework-09ddc423ff02\MyDocSafe\Test_Suite
+  C:\Users\Zbook\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\Zbook\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\Zbook\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\Zbook\AppData\Local\Programs\Python\Python310
+  C:\Users\Zbook\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
+<msg timestamp="20221227 09:47:18.438" level="WARN">Message: element click intercepted: Element &lt;span&gt;...&lt;/span&gt; is not clickable at point (342, 196). Other element would receive the click: &lt;button class="md-button md-default-theme md-ink-ripple md-focused" type="button" ng-transclude="" ng-click="openAddFolder(parent)" role="menuitem"&gt;...&lt;/button&gt;
+  (Session info: chrome=108.0.5359.125)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0119ACD3+2075859]
+	Ordinal0 [0x0112EE61+1633889]
+	Ordinal0 [0x0102B7BD+571325]
+	Ordinal0 [0x01061499+791705]
+	Ordinal0 [0x0105F4AC+783532]
+	Ordinal0 [0x0105D0AB+774315]
+	Ordinal0 [0x0105BD37+769335]
+	Ordinal0 [0x01051C76+728182]
+	Ordinal0 [0x0107731C+881436]
+	Ordinal0 [0x010515BF+726463]
+	Ordinal0 [0x01077534+881972]
+	Ordinal0 [0x0108B56A+963946]
+	Ordinal0 [0x01077136+880950]
+	Ordinal0 [0x0104FEFD+720637]
+	Ordinal0 [0x01050F3F+724799]
+	GetHandleVerifier [0x0144EED2+2769538]
+	GetHandleVerifier [0x01440D95+2711877]
+	GetHandleVerifier [0x0122A03A+521194]
+	GetHandleVerifier [0x01228DA0+516432]
+	Ordinal0 [0x0113682C+1665068]
+	Ordinal0 [0x0113B128+1683752]
+	Ordinal0 [0x0113B215+1683989]
+	Ordinal0 [0x01146484+1729668]
+	BaseThreadInitThunk [0x75BA00F9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FC7BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x76FC7B8E+238]
+</msg>
+</errors>
+</robot>
