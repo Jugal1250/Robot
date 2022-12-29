@@ -470,44 +470,44 @@ TC_002_Verify the user is able to create a new portal
 #     Navigate to tabs    Documents
 #     Delete the data(Folders)
 #
-#TC_26_Bounce Email
-#
-#    [Tags]    ${TagName}
-#    [Teardown]  run keyword if test passed    close browser
-#    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
-#    ${ContactEmail}    get email
-#    Login with valid credentials    ${Email_address}    ${Password}
-#    Upload Single Document
-#    Click Three Dot Button
-#    ${random_string}=    Generate Random String    8    [LOWER]
-#    Send For Signing    ${random_string}@mailinator.com
-#    Delete the File
-#    Go to the sender mail    ${random_string}
-#
-#TC_27_Uploading and signing large files
-#
-#    [Tags]    ${TagName}
-#    [Teardown]  run keyword if test passed    close browser
-#    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
-#    ${ContactEmail}    get email
-#    Login with valid credentials    ${Email_address}    ${Password}
-#    Upload Big file
-#    Delete the data(Folders)
-#
-#TC_28_Send several docs for signing using Send for quick approval
-#
-#    [Tags]    ${TagName}
-#    [Teardown]  run keyword if test passed    close browser
-#    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
-#    ${ContactEmail}    get email
-#    Login with valid credentials    ${Email_address}    ${Password}
-#    Upload Multiple Documents
-#    Send Document For Quick Approval    rahul.sharma_05@mailinator.com
-#    Sign on the documents in sender mail     rahul.sharma_05    rahul.sharma_05@mailinator.com
-#    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
-#    Login with valid credentials    ${Email_address}    ${Password}
-#    Go back to sender account
-#
+TC_26_Bounce Email
+
+    [Tags]    ${TagName}
+    [Teardown]  run keyword if test passed    close browser
+    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
+    ${ContactEmail}    get email
+    Login with valid credentials    ${Email_address}    ${Password}
+    Upload Single Document
+    Click Three Dot Button
+    ${random_string}=    Generate Random String    8    [LOWER]
+    Send For Signing    ${random_string}@mailinator.com
+    Delete the File
+    Go to the sender mail    ${random_string}
+
+TC_27_Uploading and signing large files
+
+    [Tags]    ${TagName}
+    [Teardown]  run keyword if test passed    close browser
+    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
+    ${ContactEmail}    get email
+    Login with valid credentials    ${Email_address}    ${Password}
+    Upload Big file
+    Delete the data(Folders)
+
+TC_28_Send several docs for signing using Send for quick approval
+
+    [Tags]    ${TagName}
+    [Teardown]  run keyword if test passed    close browser
+    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
+    ${ContactEmail}    get email
+    Login with valid credentials    ${Email_address}    ${Password}
+    Upload Multiple Documents
+    Send Document For Quick Approval    rahul.sharma_05@mailinator.com
+    Sign on the documents in sender mail     rahul.sharma_05    rahul.sharma_05@mailinator.com
+    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
+    Login with valid credentials    ${Email_address}    ${Password}
+    Go back to sender account
+
 #TC_029_Verify the user is able to share a folder
 #
 #     [Tags]    ${TagName}
@@ -621,18 +621,18 @@ TC_002_Verify the user is able to create a new portal
 #     Select an option under settings    Company Roles
 #     Delete Role    ${Rolename}
 #
-#TC_33_Send one doc for signing to two users
-#
-#    [Tags]    ${TagName}
-#    [Teardown]  run keyword if test passed    close browser
-#    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
-#    Login with valid credentials    ${Email_address}    ${Password}
-#    Upload Single Document
-#    Select Uploaded Document
-#    Click On Pen Icon
-#    Add Multiple Signee Send And Sign Document    ${Browser}
-#    Go Back To Account    ${Environment}    ${Browser}    ${Email_address}    ${Password}
-#
+TC_33_Send one doc for signing to two users
+
+    [Tags]    ${TagName}
+    [Teardown]  run keyword if test passed    close browser
+    run keyword if    ${Browser=='chrome'}    Launch browser    ${Environment}    ${Browser}    ELSE IF    ${Browser=='headlesschrome'}    Launch browser Headless    ${Environment}
+    Login with valid credentials    ${Email_address}    ${Password}
+    Upload Single Document
+    Select Uploaded Document
+    Click On Pen Icon
+    Add Multiple Signee Send And Sign Document    ${Browser}
+    Go Back To Account    ${Environment}    ${Browser}    ${Email_address}    ${Password}
+
 #TC_34_Send two docs for signing to one user
 #
 #    [Tags]    ${TagName}
